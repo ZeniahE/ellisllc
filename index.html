@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ellis LLC | Property Management, Real Estate & Wealth Planning
+    </title>
+    <style>
+      :root {
+        --black: #1f1f1f;
+        --dark-black: #000000;
+        --pink: #ff6b9e;
+        --green: #4caf7d;
+        --light-gray: #f5f5f5;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--black);
+        color: var(--white);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation Styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: transparent;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background-color: var(--dark-black);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .logo {
+        color: var(--white);
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .menu-toggle {
+        display: none;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .hamburger {
+        width: 30px;
+        height: 3px;
+        background-color: var(--pink);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger:before,
+      .hamburger:after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: var(--pink);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger:before {
+        top: -8px;
+      }
+
+      .hamburger:after {
+        top: 8px;
+      }
+
+      .menu-toggle.active .hamburger {
+        background-color: transparent;
+      }
+
+      .menu-toggle.active .hamburger:before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      .menu-toggle.active .hamburger:after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-left: 30px;
+      }
+
+      .nav-link {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--pink);
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--green);
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      header {
+        background-color: var(--dark-black);
+        padding: 100px 0 40px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: var(--pink);
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: var(--green);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--pink);
+      }
+
+      .about {
+        padding: 60px 0;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .profile-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 57px;
+        object-fit: cover;
+        border: 5px solid var(--pink);
+        flex-shrink: 0;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .services {
+        padding: 60px 0;
+        background-color: var(--dark-black);
+      }
+
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .service-card {
+        flex: 1 1 300px;
+        background-color: var(--black);
+        padding: 30px;
+        border-radius: 10px;
+        border-top: 5px solid var(--green);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .service-card h3 {
+        margin-top: 0;
+      }
+
+      .ebook {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: var(--pink);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--green);
+        transform: translateY(-3px);
+      }
+
+      .calendar {
+        padding: 60px 0;
+        background-color: var(--dark-black);
+        text-align: center;
+      }
+
+      .calendar-container {
+        max-width: 800px;
+        margin: 40px auto 0;
+        background-color: var(--white);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      footer {
+        padding: 30px 0;
+        text-align: center;
+        background-color: var(--black);
+        color: var(--light-gray);
+      }
+
+      @media (max-width: 768px) {
+        .services-grid {
+          flex-direction: column;
+        }
+
+        .about-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile-img {
+          width: 200px;
+          height: 200px;
+          margin-bottom: 20px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          height: 100vh;
+          background-color: var(--dark-black);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.3s ease;
+          z-index: 1000;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-item {
+          margin: 15px 0;
+        }
+
+        header {
+          padding-top: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">Ellis LLC</div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="hamburger"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#ebook" class="nav-link">Free E-Book</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Schedule</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header id="home">
+      <div class="container">
+        <h1>This is Ellis LLC</h1>
+        <p>Property Management | Real Estate | Generational Wealth Planning</p>
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <img src="images/mypfp1.webp" alt="Ellis LLC" class="profile-img" />
+          <div class="about-text">
+            <h2>About The Founder</h2>
+            <p>
+              With over X years of experience in the real estate industry, I've
+              dedicated my career to helping clients navigate property
+              investments, manage their assets effectively, and build lasting
+              wealth for future generations. My approach combines market
+              expertise with personalized strategies to create tailored
+              solutions for each client's unique situation.
+            </p>
+            <p>
+              When I'm not working with clients, you can find me [personal
+              detail/hobby] or [another personal detail]. I believe in [core
+              philosophy or value] which informs every aspect of my professional
+              services.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2>My Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Property Management</h3>
+            <p>
+              Comprehensive property management solutions that maximize your
+              investment returns while minimizing stress. From tenant screening
+              to maintenance coordination, I handle all aspects of your
+              property's performance.
+            </p>
+            <ul>
+              <li>24/7 Tenant Support</li>
+              <li>Financial Reporting</li>
+              <li>Maintenance Coordination</li>
+              <li>Rent Optimization</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>Real Estate</h3>
+            <p>
+              Whether you're buying your first home or building an investment
+              portfolio, I provide expert guidance through every step of the
+              real estate process with market insights and negotiation
+              expertise.
+            </p>
+            <ul>
+              <li>Buyer Representation</li>
+              <li>Seller Representation</li>
+              <li>Investment Property Acquisition</li>
+              <li>Market Analysis</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3>Generational Wealth Planning</h3>
+            <p>
+              Strategies to build, protect, and transfer wealth across
+              generations through real estate assets. I help families create
+              lasting legacies with tax-efficient structures and sustainable
+              growth plans.
+            </p>
+            <ul>
+              <li>Wealth Preservation Strategies</li>
+              <li>Asset Protection</li>
+              <li>Succession Planning</li>
+              <li>Tax Optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ebook" id="ebook">
+      <div class="container">
+        <h2>First E-Book</h2>
+        <p>
+          Download my guide "Building Generational Wealth Through Real Estate"
+          to learn the foundational strategies for creating lasting financial
+          security for your family.
+        </p>
+        <a href="#" class="btn">Download Now</a>
+      </div>
+    </section>
+
+    <section class="calendar" id="contact">
+      <div class="container">
+        <h2>Schedule a Consultation</h2>
+        <p>
+          Ready to take the next step? Book a free 30-minute consultation to
+          discuss your goals and how I can help you achieve them.
+        </p>
+
+        <div class="calendar-container">
+          <!-- Calendly inline widget begin -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/yourusername"
+            style="min-width: 320px; height: 700px"
+          ></div>
+          <script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          ></script>
+          <!-- Calendly inline widget end -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Ellis LLC. All rights reserved.</p>
+        <p>Contact: Eservices4me@gmail.com | (404) 979-0362</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking on a nav link
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+  </body>
+</html>
