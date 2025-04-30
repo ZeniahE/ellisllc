@@ -178,8 +178,8 @@
       }
 
       .profile-img {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
         border-radius: 57px;
         object-fit: cover;
         border: 5px solid var(--pink);
@@ -216,8 +216,27 @@
         margin-top: 0;
       }
 
-      .ebook {
+      .ebooks {
         padding: 80px 0;
+        text-align: center;
+      }
+
+      .ebooks-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+      }
+
+      .ebook-card {
+        flex: 1 1 400px;
+        max-width: 500px;
+        background-color: var(--dark-black);
+        padding: 30px;
+        border-radius: 10px;
+        border-top: 5px solid var(--green);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         text-align: center;
       }
 
@@ -231,6 +250,9 @@
         font-weight: bold;
         margin-top: 20px;
         transition: all 0.3s ease;
+      }
+      .consultation-link {
+        color: var(--pink);
       }
 
       .btn:hover {
@@ -313,7 +335,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="container nav-container">
-        <div class="logo">Ellis LLC</div>
+        <div class="logo">Ellis</div>
         <div class="menu-toggle" id="mobile-menu">
           <span class="hamburger"></span>
         </div>
@@ -323,7 +345,7 @@
             <a href="#services" class="nav-link">Services</a>
           </li>
           <li class="nav-item">
-            <a href="#ebook" class="nav-link">Free E-Book</a>
+            <a href="#ebooks" class="nav-link">Free E-Books</a>
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link">Schedule</a>
@@ -334,8 +356,16 @@
 
     <header id="home">
       <div class="container">
-        <h1>This is Ellis LLC</h1>
-        <p>Property Management | Real Estate | Generational Wealth Planning</p>
+        <h1>ELLIS Generational Wealth Building</h1>
+        <!-- <p>Property Management | Real Estate | Generational Wealth Planning</p> -->
+        <p>
+          Let's talk about it!
+          <a
+            class="consultation-link"
+            href="https://calendly.com/eservices4me/15-minute-consultation"
+            >Book a Consultation Now!</a
+          >
+        </p>
       </div>
     </header>
 
@@ -343,25 +373,45 @@
       <div class="container">
         <div class="about-content">
           <img
-            src="images/Crowd-1024x726.jpg.webp"
+            src="images/abt-me-img.jpg"
             alt="Ellis LLC"
             class="profile-img"
           />
           <div class="about-text">
             <h2>About The Founder</h2>
             <p>
-              With over X years of experience in the real estate industry, I've
-              dedicated my career to helping clients navigate property
-              investments, manage their assets effectively, and build lasting
-              wealth for future generations. My approach combines market
-              expertise with personalized strategies to create tailored
-              solutions for each client's unique situation.
-            </p>
-            <p>
-              When I'm not working with clients, you can find me [personal
-              detail/hobby] or [another personal detail]. I believe in [core
-              philosophy or value] which informs every aspect of my professional
-              services.
+              Leighanne Ellis is a Realtor, investor, and financial strategist
+              with a mission: to help individuals and families build real,
+              lasting wealth through smart real estate decisions. With
+              properties spanning Florida and Georgia, she brings hands-on
+              experience as a landlord, property manager, and advisor to every
+              client relationship.<br /><br />
+
+              From working with U.S. federal agencies to advising first-time
+              buyers, Leighanne blends corporate precision with a personal
+              touch—offering tailored guidance in buying, selling, investing,
+              and wealth planning. A
+              <i>Marquis Who's Who in America</i> inductee and proud member of
+              Alpha Kappa Alpha Sorority, Inc., she is also a passionate
+              advocate for financial literacy and generational wealth in
+              underserved communities.<br /><br />
+
+              Driven by faith, ongoing education, and a commitment to
+              excellence, Leighanne is known for turning intimidating financial
+              goals into achievable milestones. Whether you're ready to buy your
+              first property or expand your investment portfolio, she'll help
+              you make confident, strategic decisions that build long-term
+              value.<br /><br />
+              <!-- change the color of link to green and add the bold in css instead of inline -->
+              Start your journey to financial freedom—
+              <b
+                ><a
+                  class="consultation-link"
+                  href="https://calendly.com/eservices4me/15-minute-consultation"
+                  target="_blank"
+                  >Book a Consultation Today</a
+                ></b
+              >.
             </p>
           </div>
         </div>
@@ -375,63 +425,96 @@
           <div class="service-card">
             <h3>Property Management</h3>
             <p>
-              Comprehensive property management solutions that maximize your
-              investment returns while minimizing stress. From tenant screening
-              to maintenance coordination, I handle all aspects of your
-              property's performance.
+              <i>Transforming your space shouldn't feel overwhelming</i> — it
+              should feel empowering.<br /><br />
+              Whether you're remodeling a single room or revamping an entire
+              property, I’ll guide you through every step—contractor
+              coordination, purposeful shopping, and stunning interior staging.
+              Let’s make your renovation stress-free, efficient, and beautifully
+              executed.
             </p>
-            <ul>
-              <li>24/7 Tenant Support</li>
-              <li>Financial Reporting</li>
-              <li>Maintenance Coordination</li>
-              <li>Rent Optimization</li>
-            </ul>
+            <details>
+              <summary>Accolades/Certifications</summary>
+              <img
+                style="max-height: 250px"
+                src="images/Certified-Property-Management-Certificate.jpg"
+              />
+            </details>
           </div>
 
           <div class="service-card">
             <h3>Real Estate</h3>
             <p>
-              Whether you're buying your first home or building an investment
-              portfolio, I provide expert guidance through every step of the
-              real estate process with market insights and negotiation
-              expertise.
+              <i>Your real estate journey deserves strategy, not guesswork.</i
+              ><br /><br />
+              Whether you're a first-time buyer, seasoned investor, or tenant
+              seeking the perfect rental, I offer expert guidance backed by
+              market insight and sharp negotiation skills. Let’s turn your goals
+              into smart, successful moves.
             </p>
-            <ul>
-              <li>Buyer Representation</li>
-              <li>Seller Representation</li>
-              <li>Investment Property Acquisition</li>
-              <li>Market Analysis</li>
-            </ul>
+            <details>
+              <summary>Past Works</summary>
+              <img style="max-height: 250px" src="images/house-1-p1.png" />
+              <img style="max-height: 250px" src="images/house-1-p2.png" />
+              <img style="max-height: 250px" src="images/house-2-p1.png" />
+            </details>
           </div>
 
           <div class="service-card">
             <h3>Generational Wealth Planning</h3>
             <p>
-              Strategies to build, protect, and transfer wealth across
-              generations through real estate assets. I help families create
-              lasting legacies with tax-efficient structures and sustainable
-              growth plans.
+              <i
+                >The greatest gift you can leave behind is clarity and
+                security.</i
+              ><br /><br />
+              From drafting a heartfelt legacy plan to building investment
+              portfolios and securing life insurance, I’ll help you create a
+              roadmap that protects your wishes and empowers future generations.
+              Let’s ensure your final chapter brings lasting peace—and
+              prosperity.
             </p>
-            <ul>
-              <li>Wealth Preservation Strategies</li>
-              <li>Asset Protection</li>
-              <li>Succession Planning</li>
-              <li>Tax Optimization</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ebook" id="ebook">
+    <section class="ebooks" id="ebooks">
       <div class="container">
-        <h2>First E-Book</h2>
+        <h2>Free E-Books</h2>
         <p>
-          Download my guide "Building Generational Wealth Through Real Estate"
-          to learn the foundational strategies for creating lasting financial
-          security for your family.
+          Explore my collection of free resources to help you navigate the real
+          estate market and build wealth.
         </p>
-        <a href="#" class="btn">Download Now</a>
+
+        <div class="ebooks-container">
+          <div class="ebook-card">
+            <h3>Selling Secrets You Can't Afford to Miss</h3>
+            <p>
+              Discover proven strategies and insider tips to maximize your
+              profits when selling property.
+            </p>
+            <a
+              href="https://leighanneellis.book.live/biz-card-book"
+              class="btn"
+              target="_blank"
+              >Read Now</a
+            >
+          </div>
+
+          <div class="ebook-card">
+            <h3>A Guide to Selling your Home after Divorce</h3>
+            <p>
+              Navigate the emotional and financial complexities of selling your
+              home during a divorce with this compassionate guide.
+            </p>
+            <a
+              href="https://leighanneellis.book.live/divorce-book"
+              class="btn"
+              target="_blank"
+              >Read Now</a
+            >
+          </div>
+        </div>
       </div>
     </section>
 
@@ -439,7 +522,7 @@
       <div class="container">
         <h2>Schedule a Consultation</h2>
         <p>
-          Ready to take the next step? Book a free 30-minute consultation to
+          Ready to take the next step? Book a free 15-minute consultation to
           discuss your goals and how I can help you achieve them.
         </p>
 
@@ -447,7 +530,7 @@
           <!-- Calendly inline widget begin -->
           <div
             class="calendly-inline-widget"
-            data-url="https://calendly.com/yourusername"
+            data-url="https://calendly.com/eservices4me/15-minute-consultation"
             style="min-width: 320px; height: 700px"
           ></div>
           <script
