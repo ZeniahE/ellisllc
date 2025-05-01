@@ -219,6 +219,7 @@
       .ebooks {
         padding: 80px 0;
         text-align: center;
+        background-color: var(--dark-black);
       }
 
       .ebooks-container {
@@ -232,7 +233,7 @@
       .ebook-card {
         flex: 1 1 400px;
         max-width: 500px;
-        background-color: var(--dark-black);
+        background-color: var(--black);
         padding: 30px;
         border-radius: 10px;
         border-top: 5px solid var(--green);
@@ -262,7 +263,7 @@
 
       .calendar {
         padding: 60px 0;
-        background-color: var(--dark-black);
+        background-color: var(--black);
         text-align: center;
       }
 
@@ -289,6 +290,69 @@
       }
       .summary-imgs {
         text-align: center;
+      }
+
+      /* Speech Clips Section */
+      .speech-clips {
+        padding: 60px 0;
+        background-color: var(--black);
+      }
+
+      .clips-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .clip-card {
+        flex: 1 1 350px;
+        max-width: 400px;
+        background-color: var(--dark-black);
+        padding: 25px;
+        border-radius: 10px;
+        border-top: 5px solid var(--pink);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .clip-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .clip-card h3 {
+        margin-top: 0;
+        color: var(--green);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .clip-card {
+          flex: 1 1 100%;
+        }
+
+        .speech-clips {
+          padding: 40px 0;
+        }
       }
 
       @media (max-width: 768px) {
@@ -515,6 +579,12 @@
                 <img style="max-width: 270px" src="images/house-1-p1.png" />
                 <img style="max-width: 270px" src="images/house-1-p2.png" />
                 <img style="max-width: 270px" src="images/house-2-p1.png" />
+                <img style="max-width: 270px" src="images/house-3-p1.png" />
+                <img style="max-width: 270px" src="images/house.jpeg" />
+                <img
+                  style="max-width: 270px"
+                  src="images/in-front-of-house.jpeg"
+                />
               </div>
             </details>
           </div>
@@ -547,6 +617,67 @@
             </details>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Add this right after the Services section -->
+    <section class="speech-clips">
+      <div class="container">
+        <h2 style="text-align: center">Speaking Engagements</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px">
+          Watch highlights from Ms. Ellis's inspirational talks on real estate,
+          wealth building, and financial empowerment in the community.
+        </p>
+        <div class="clips-grid">
+          <!-- Clip 1 -->
+          <div class="clip-card">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="630"
+                src="https://drive.google.com/file/d/1h_EOdv0dG_Bf2VKEVbTPOJVIfwzwhsJC/preview"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3>Budgeting and Financial Wellness</h3>
+            <p>
+              Clips from Ms. Ellis' inspirational speech about strenthening your
+              financial wellness through building good habits.
+            </p>
+          </div>
+
+          <!-- Clip 2 -->
+          <div class="clip-card">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="630"
+                src="https://drive.google.com/file/d/1CyuDqrqEPC145YsiP22LSV_AvKN4i_ux/preview"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <h3>Morning Investment talk</h3>
+            <p>
+              A brief word of encouragement from Ms.Ellis as she secures $200K+
+              in profit for her client by helping sell client's investment
+              property, 1479 Mozley Place in Atlanta Georgia.
+            </p>
+          </div>
+        </div>
+
+        <!-- <div style="text-align: center; margin-top: 40px">
+          <a
+            href="https://calendly.com/eservices4me/speaking-engagement"
+            class="btn"
+            target="_blank"
+          >
+            Book a Speaking Engagement
+          </a>
+        </div> -->
       </div>
     </section>
 
